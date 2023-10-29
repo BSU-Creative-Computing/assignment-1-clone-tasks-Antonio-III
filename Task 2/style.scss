@@ -1,0 +1,195 @@
+$flex: 6;
+// h2 default font-size: 24px
+// p font-size: 16px
+// a has 20px??? 
+%shadow-effect{
+
+        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+
+
+*{
+    margin:0; /* Remove default margins */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+}
+
+
+.header{
+    background-color: #1e90ff;
+    color:rgb(255, 255, 255); 
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    height:10vh; // Set height or else child elements' height will be their contents' when child is given 100% height.
+
+
+    padding:0 2vh;
+    padding-inline-end: 0px;
+}
+
+.header>h2{
+    font-size:24px;
+}
+
+
+input{
+    padding: .5vw;
+    
+    margin-left: 15vw; // Move item to the right
+
+    width:20vw;
+
+    font-size:.7em;
+}
+
+.links{
+    height:100%;
+    
+    width:30vw;
+
+    display:flex;
+    align-items: center;
+    //background-color: black;
+
+
+}
+
+.links>a{
+    color:white;
+    text-decoration: none;
+
+    display:flex;
+    align-items: center;
+    justify-content:center;
+
+    flex:1;
+
+    height:100%; // Will increase the hitbox
+
+    font-size: .8em;
+}
+.links>a:hover{
+    @extend a;
+
+    background-color: rgb(56,157,255);
+
+
+}
+
+
+
+.body{
+    margin: 1.5vw 0; 
+
+    display:flex;
+    justify-content: center;
+
+    flex:1 0 auto;
+}
+
+.items{
+    //background-color: chartreuse;
+
+    display:flex;
+
+    width: 80%; // <body> default is 100% viewport - scrollbar
+   
+}
+
+.items > .left-item{
+
+    flex:1 0 50vw;
+    }
+
+.left-movie{
+    @extend %shadow-effect;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+img{
+    width:100%;
+
+    display:block;
+}
+
+.text{
+    padding:1vw;
+
+  
+}
+
+p{
+    margin: 1vw 0;
+
+    //default font-size:16px;
+}
+
+.button{
+    border-radius: 5px;
+
+    padding:.6vw;
+
+    align-self: flex-end;
+
+    margin:2vw;
+
+    background-color: rgb( 27, 152, 255);
+
+    color:white;
+
+    border:none; // Remove the default black border
+
+    font-size:16px;
+
+    cursor: pointer;
+}
+
+
+.items > .right-item{
+   // background-color:indigo;
+   display:flex;
+
+   flex-flow:row wrap;
+
+   
+
+}
+
+.right-items{
+    @extend %shadow-effect;
+
+    margin:0 .5vw; // 1vw left and right Will not be counted in box-sizing
+
+    padding:1vw;
+
+    width:calc(50% - .5vw);
+
+    display:flex;
+    flex-flow: column wrap;
+
+    box-sizing: border-box;
+}
+
+.right-items >.text{
+    padding:0;
+    padding-top:1vw;
+}
+:nth-child(even of .right-items){
+    margin:0;
+}
+
+:nth-last-child(-n +2 of .right-items){
+    margin-top:.5vw
+}
+
+.right-items > .button{
+    margin:1vw;
+}
