@@ -28,6 +28,7 @@ $footer_colors: nth($colors,2), nth($colors,1);
 }
 }
 
+
 *{
     margin:0;
 }
@@ -45,6 +46,8 @@ img{
     display:block;
 }
 
+
+// Create 2 footer elements
 @for $i from 1 through length($footer_colors){
     :nth-child(#{$i} of .footer){
         background-color: nth($footer_colors,$i);
@@ -52,14 +55,6 @@ img{
         height:50px;
     }
 }
-
-@for $i from 1 through length($selected_colors){
-    :nth-child(#{$i} of .color){
-        background-color: nth($selected_colors,$i);
-        height:40px;
-    }
-}
-
 
 .circles{
     @include flex-container-column();
@@ -69,16 +64,21 @@ img{
     padding: 40px 0;
 }
 
+// Create 4 lines/circles, with specified styles
 @for $i from 1 through 4{
+
+    // colors
     :nth-child(#{$i} of .color){
         background-color: nth($selected_colors,$i);
         height:40px;
     }
 
+    // on hover
     :nth-child(#{$i} of .color:hover){
         background-color: nth($colors,7);
     }
 
+    // circles
     :nth-child(#{$i} of .circle){
         width:nth($radius,$i);
         height:nth($radius,$i);
@@ -91,7 +91,8 @@ img{
 
         border-radius: 50%;
     }
-
+    
+    // on hover
     :nth-child(#{$i} of .circle:hover){
         background-color: nth($colors,7);
     }

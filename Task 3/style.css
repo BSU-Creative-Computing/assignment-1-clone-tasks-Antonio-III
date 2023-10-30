@@ -33,26 +33,6 @@ img {
   height: 50px;
 }
 
-:nth-child(1 of .color) {
-  background-color: #4e89ae;
-  height: 40px;
-}
-
-:nth-child(2 of .color) {
-  background-color: #43658b;
-  height: 40px;
-}
-
-:nth-child(3 of .color) {
-  background-color: #ed6663;
-  height: 40px;
-}
-
-:nth-child(4 of .color) {
-  background-color: #ffa372;
-  height: 40px;
-}
-
 .circles {
   display: flex;
   flex-direction: column;
